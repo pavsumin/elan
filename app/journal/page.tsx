@@ -55,6 +55,58 @@ export default function JournalPage() {
 					</div>
 				</motion.section>
 
+				{/* Featured Post */}
+				<section className='px-6 py-16 md:px-12 md:py-24 lg:px-20'>
+					<div className='mx-auto max-w-7xl'>
+						<motion.div
+							initial={{ opacity: 0, y: 30 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8 }}
+						>
+							<Link
+								href={`/journal/${featuredPost.slug}`}
+								className='group block'
+							>
+								<div className='grid gap-8 lg:grid-cols-2 lg:gap-12'>
+									<div className='relative aspect-[4/3] overflow-hidden lg:aspect-[4/5]'>
+										<Image
+											src={featuredPost.image}
+											alt={featuredPost.title}
+											fill
+											className='object-cover transition-transform duration-700 group-hover:scale-105'
+											priority
+										/>
+									</div>
+									<div className='flex flex-col justify-center'>
+										<div className='flex items-center gap-4'>
+											<span className='text-xs tracking-[0.15em] text-muted-foreground'>
+												{featuredPost.category.toUpperCase()}
+											</span>
+											<span className='text-xs text-muted-foreground'>•</span>
+											<span className='text-xs text-muted-foreground'>
+												{featuredPost.date}
+											</span>
+										</div>
+										<h2 className='mt-4 font-serif text-3xl leading-tight md:text-4xl lg:text-5xl'>
+											{featuredPost.title}
+										</h2>
+										<p className='mt-6 text-sm leading-relaxed text-muted-foreground'>
+											{featuredPost.excerpt}
+										</p>
+										<div className='mt-8 flex items-center gap-2 text-xs tracking-[0.15em]'>
+											READ ARTICLE
+											<ArrowRight
+												className='h-4 w-4 transition-transform group-hover:translate-x-1'
+												strokeWidth={1.5}
+											/>
+										</div>
+									</div>
+								</div>
+							</Link>
+						</motion.div>
+					</div>
+				</section>
+
 				{/* Categories Filter */}
 				<motion.section
 					initial={{ opacity: 0, y: 20 }}
@@ -112,58 +164,6 @@ export default function JournalPage() {
 						</div>
 					</div>
 				</motion.section>
-
-				{/* Featured Post */}
-				<section className='px-6 py-16 md:px-12 md:py-24 lg:px-20'>
-					<div className='mx-auto max-w-7xl'>
-						<motion.div
-							initial={{ opacity: 0, y: 30 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.8 }}
-						>
-							<Link
-								href={`/journal/${featuredPost.slug}`}
-								className='group block'
-							>
-								<div className='grid gap-8 lg:grid-cols-2 lg:gap-12'>
-									<div className='relative aspect-[4/3] overflow-hidden lg:aspect-[4/5]'>
-										<Image
-											src={featuredPost.image}
-											alt={featuredPost.title}
-											fill
-											className='object-cover transition-transform duration-700 group-hover:scale-105'
-											priority
-										/>
-									</div>
-									<div className='flex flex-col justify-center'>
-										<div className='flex items-center gap-4'>
-											<span className='text-xs tracking-[0.15em] text-muted-foreground'>
-												{featuredPost.category.toUpperCase()}
-											</span>
-											<span className='text-xs text-muted-foreground'>•</span>
-											<span className='text-xs text-muted-foreground'>
-												{featuredPost.date}
-											</span>
-										</div>
-										<h2 className='mt-4 font-serif text-3xl leading-tight md:text-4xl lg:text-5xl'>
-											{featuredPost.title}
-										</h2>
-										<p className='mt-6 text-sm leading-relaxed text-muted-foreground'>
-											{featuredPost.excerpt}
-										</p>
-										<div className='mt-8 flex items-center gap-2 text-xs tracking-[0.15em]'>
-											READ ARTICLE
-											<ArrowRight
-												className='h-4 w-4 transition-transform group-hover:translate-x-1'
-												strokeWidth={1.5}
-											/>
-										</div>
-									</div>
-								</div>
-							</Link>
-						</motion.div>
-					</div>
-				</section>
 
 				{/* Posts Grid */}
 				<section
