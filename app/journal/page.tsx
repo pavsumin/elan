@@ -34,34 +34,38 @@ export default function JournalPage() {
 			<Header />
 			<main className='min-h-screen bg-background pt-18'>
 				{/* Page Header */}
-				<section className='border-b border-border px-6 py-16 md:px-12 md:py-24 lg:px-20'>
+				<motion.section
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					className='border-b border-border px-6 py-16 md:px-12 md:py-24 lg:px-20'
+				>
 					<div className='mx-auto max-w-7xl'>
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6 }}
-						>
-							<p className='text-xs tracking-[0.2em] text-muted-foreground'>
-								STORIES & INSIGHTS
-							</p>
-							<h1 className='mt-4 font-serif text-5xl md:text-6xl lg:text-7xl'>
-								The Journal
-							</h1>
-							<p className='mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground'>
-								Explore our world through stories of craft, sustainability, and
-								the art of mindful dressing. Discover the people and processes
-								behind every piece.
-							</p>
-						</motion.div>
+						<p className='text-xs tracking-[0.2em] text-muted-foreground'>
+							STORIES & INSIGHTS
+						</p>
+						<h1 className='mt-4 font-serif text-5xl md:text-6xl lg:text-7xl'>
+							The Journal
+						</h1>
+						<p className='mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground'>
+							Explore our world through stories of craft, sustainability, and
+							the art of mindful dressing. Discover the people and processes
+							behind every piece.
+						</p>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Categories Filter */}
-				<section className='border-b border-border px-6 py-4 md:px-12 lg:px-20'>
+				<motion.section
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					className='border-b border-border px-6 py-4 md:px-12 lg:px-20'
+				>
 					<div className='mx-auto max-w-7xl'>
 						<div className='flex items-center justify-between'>
 							{/* Desktop Categories */}
-							<div className='hidden gap-6 md:flex'>
+							<div className='hidden gap-6 md:flex py-2'>
 								{articleCategories.map(category => (
 									<button
 										key={category}
@@ -107,7 +111,7 @@ export default function JournalPage() {
 							</span>
 						</div>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Featured Post */}
 				<section className='px-6 py-16 md:px-12 md:py-24 lg:px-20'>

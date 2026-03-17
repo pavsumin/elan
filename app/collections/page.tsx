@@ -75,30 +75,34 @@ export default function CollectionsPage() {
 			<Header />
 			<main className='min-h-screen bg-background pt-18'>
 				{/* Page Header */}
-				<section className='border-b border-border px-6 py-16 md:px-12 md:py-24 lg:px-20'>
+				<motion.section
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					className='border-b border-border px-6 py-16 md:px-12 md:py-24 lg:px-20'
+				>
 					<div className='mx-auto max-w-7xl'>
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6 }}
-						>
-							<p className='text-xs tracking-[0.2em] text-muted-foreground'>
-								SPRING / SUMMER 2026
-							</p>
-							<h1 className='mt-4 font-serif text-5xl md:text-6xl lg:text-7xl'>
-								Collections
-							</h1>
-							<p className='mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground'>
-								Discover our curated selection of refined essentials, each piece
-								crafted with uncompromising attention to detail and the finest
-								natural materials.
-							</p>
-						</motion.div>
+						<p className='text-xs tracking-[0.2em] text-muted-foreground'>
+							SPRING / SUMMER 2026
+						</p>
+						<h1 className='mt-4 font-serif text-5xl md:text-6xl lg:text-7xl'>
+							Collections
+						</h1>
+						<p className='mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground'>
+							Discover our curated selection of refined essentials, each piece
+							crafted with uncompromising attention to detail and the finest
+							natural materials.
+						</p>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Filter Bar */}
-				<section className='sticky top-[72px] z-40 border-b border-border bg-background/95 backdrop-blur-md'>
+				<motion.section
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					className='sticky top-[72px] z-40 border-b border-border bg-background/95 backdrop-blur-md'
+				>
 					<div className='px-6 py-4 md:px-12 lg:px-20'>
 						<div className='mx-auto flex max-w-7xl items-center justify-between'>
 							{/* Left - Categories (Desktop) */}
@@ -238,7 +242,7 @@ export default function CollectionsPage() {
 							</div>
 						</div>
 					</div>
-				</section>
+				</motion.section>
 
 				{/* Products Grid */}
 				<section className='px-6 py-12 md:px-12 md:py-16 lg:px-20' ref={ref}>
