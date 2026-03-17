@@ -20,6 +20,18 @@ const inter = Inter({
 export const metadata: Metadata = {
 	title: 'ÉLAN | Luxury Fashion',
 	description: 'Timeless elegance meets modern sophistication',
+	openGraph: {
+		title: 'ÉLAN | Luxury Fashion',
+		description: 'Timeless elegance meets modern sophistication',
+		url: 'https://elan-fashion.vercel.app',
+		siteName: 'ÉLAN',
+		images: [
+			{
+				url: 'https://elan-fashion.vercel.app/og-image.png',
+				alt: 'ÉLAN | Luxury Fashion',
+			},
+		],
+	},
 }
 
 export default function RootLayout({
