@@ -32,7 +32,7 @@ export default async function ArticlePage({ params }: PageProps) {
 	return (
 		<>
 			<Header />
-			<main className='min-h-screen bg-background pt-20'>
+			<main className='min-h-screen bg-background pt-18'>
 				{/* Hero Image */}
 				<section className='relative h-[50vh] md:h-[60vh]'>
 					<Image
