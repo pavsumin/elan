@@ -111,7 +111,7 @@ export default function CollectionsPage() {
 									<button
 										key={category}
 										onClick={() => setSelectedCategory(category)}
-										className={`relative text-xs tracking-[0.15em] transition-colors ${
+										className={`relative text-xs tracking-[0.15em] transition-colors cursor-pointer ${
 											selectedCategory === category
 												? 'text-foreground'
 												: 'text-muted-foreground hover:text-foreground'
@@ -131,7 +131,7 @@ export default function CollectionsPage() {
 							{/* Mobile Filter Button */}
 							<Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
 								<SheetTrigger asChild>
-									<button className='flex items-center gap-2 text-xs tracking-[0.15em] lg:hidden'>
+									<button className='flex items-center gap-2 text-xs tracking-[0.15em] lg:hidden cursor-pointer'>
 										<SlidersHorizontal className='h-4 w-4' strokeWidth={1.5} />
 										FILTER & SORT
 									</button>
@@ -152,7 +152,7 @@ export default function CollectionsPage() {
 													<button
 														key={category}
 														onClick={() => setSelectedCategory(category)}
-														className={`border px-4 py-2 text-xs tracking-[0.1em] transition-colors ${
+														className={`border px-4 py-2 text-xs tracking-[0.1em] transition-colors cursor-pointer ${
 															selectedCategory === category
 																? 'border-foreground bg-foreground text-primary-foreground'
 																: 'border-border hover:border-foreground'
@@ -173,7 +173,7 @@ export default function CollectionsPage() {
 													<button
 														key={option}
 														onClick={() => setSortBy(option)}
-														className={`block w-full py-2 text-left text-sm ${
+														className={`block w-full py-2 text-left text-sm cursor-pointer ${
 															sortBy === option
 																? 'text-foreground'
 																: 'text-muted-foreground hover:text-foreground'
@@ -188,7 +188,7 @@ export default function CollectionsPage() {
 									<div className='absolute bottom-0 left-0 right-0 border-t border-border bg-background p-6'>
 										<Button
 											onClick={() => setIsFilterOpen(false)}
-											className='w-full bg-foreground text-primary-foreground hover:bg-foreground/90'
+											className='w-full bg-foreground text-primary-foreground hover:bg-foreground/90 cursor-pointer'
 										>
 											View {filteredProducts.length} Products
 										</Button>
@@ -204,12 +204,16 @@ export default function CollectionsPage() {
 										SORT:
 									</span>
 									<Select value={sortBy} onValueChange={setSortBy}>
-										<SelectTrigger className='w-[180px] border-0 bg-transparent text-xs tracking-[0.1em] focus:ring-0'>
+										<SelectTrigger className='w-[180px] border-0 bg-transparent text-xs tracking-[0.1em] focus:ring-0 cursor-pointer'>
 											<SelectValue />
 										</SelectTrigger>
 										<SelectContent>
 											{sortOptions.map(option => (
-												<SelectItem key={option} value={option}>
+												<SelectItem
+													key={option}
+													value={option}
+													className='cursor-pointer'
+												>
 													{option}
 												</SelectItem>
 											))}
@@ -221,14 +225,14 @@ export default function CollectionsPage() {
 								<div className='flex items-center gap-2 border-l border-border pl-6'>
 									<button
 										onClick={() => setGridSize('large')}
-										className={`p-1 ${gridSize === 'large' ? 'text-foreground' : 'text-muted-foreground'}`}
+										className={`p-1 cursor-pointer ${gridSize === 'large' ? 'text-foreground' : 'text-muted-foreground'}`}
 										aria-label='Large grid'
 									>
 										<Grid3X3 className='h-5 w-5' strokeWidth={1.5} />
 									</button>
 									<button
 										onClick={() => setGridSize('small')}
-										className={`p-1 ${gridSize === 'small' ? 'text-foreground' : 'text-muted-foreground'}`}
+										className={`p-1 cursor-pointer ${gridSize === 'small' ? 'text-foreground' : 'text-muted-foreground'}`}
 										aria-label='Small grid'
 									>
 										<LayoutGrid className='h-5 w-5' strokeWidth={1.5} />
@@ -290,7 +294,7 @@ export default function CollectionsPage() {
 												<motion.button
 													whileHover={{ scale: 1.1 }}
 													onClick={e => handleQuickAdd(product, e)}
-													className='absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center bg-background opacity-0 transition-opacity group-hover:opacity-100'
+													className='absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center bg-background opacity-0 transition-opacity group-hover:opacity-100 cursor-pointer'
 													aria-label='Quick add'
 												>
 													<Plus className='h-5 w-5' strokeWidth={1.5} />

@@ -2,7 +2,6 @@
 
 import {
 	Sheet,
-	SheetClose,
 	SheetContent,
 	SheetTitle,
 	SheetTrigger,
@@ -10,7 +9,7 @@ import {
 import { useCart } from '@/lib/cart-context'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { Menu, Search, ShoppingBag, X } from 'lucide-react'
+import { Menu, Search, ShoppingBag } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -107,7 +106,7 @@ export function Header({
 						<button
 							onClick={() => setIsSearchOpen(true)}
 							className={cn(
-								'hidden items-center gap-2 text-xs tracking-[0.15em] transition-colors lg:flex',
+								'hidden items-center gap-2 text-xs tracking-[0.15em] transition-colors lg:flex cursor-pointer',
 								showDark
 									? 'text-muted-foreground hover:text-foreground'
 									: 'text-primary-foreground/70 hover:text-primary-foreground',
@@ -120,7 +119,7 @@ export function Header({
 
 						<button
 							onClick={() => setCartOpen(true)}
-							className='group relative'
+							className='group relative cursor-pointer'
 							aria-label='Shopping bag'
 						>
 							<ShoppingBag
@@ -165,14 +164,6 @@ export function Header({
 										<span className='font-serif text-2xl tracking-[0.2em]'>
 											ÉLAN
 										</span>
-										<SheetClose asChild>
-											<button aria-label='Close menu'>
-												<X
-													className='h-6 w-6 text-foreground'
-													strokeWidth={1.5}
-												/>
-											</button>
-										</SheetClose>
 									</div>
 
 									<nav className='flex-1 px-6 py-12'>

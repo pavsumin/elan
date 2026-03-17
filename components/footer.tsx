@@ -54,7 +54,7 @@ export function Footer() {
 									/>
 									<button
 										type='submit'
-										className='border-b border-primary-foreground/30 px-6 py-3 text-xs tracking-[0.15em] transition-colors hover:border-primary-foreground'
+										className='border-b border-primary-foreground/30 px-6 py-3 text-xs tracking-[0.15em] transition-colors hover:border-primary-foreground cursor-pointer'
 									>
 										SUBSCRIBE
 									</button>

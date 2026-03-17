@@ -162,19 +162,25 @@ export default function ContactPage() {
 												setFormData({ ...formData, subject: v })
 											}
 										>
-											<SelectTrigger className='border-border bg-transparent'>
+											<SelectTrigger className='border-border bg-transparent cursor-pointer'>
 												<SelectValue placeholder='Select a subject' />
 											</SelectTrigger>
 											<SelectContent>
-												<SelectItem value='order'>Order Inquiry</SelectItem>
-												<SelectItem value='product'>
+												<SelectItem value='order' className='cursor-pointer'>
+													Order Inquiry
+												</SelectItem>
+												<SelectItem value='product' className='cursor-pointer'>
 													Product Question
 												</SelectItem>
-												<SelectItem value='returns'>
+												<SelectItem value='returns' className='cursor-pointer'>
 													Returns & Exchanges
 												</SelectItem>
-												<SelectItem value='sizing'>Sizing Help</SelectItem>
-												<SelectItem value='other'>Other</SelectItem>
+												<SelectItem value='sizing' className='cursor-pointer'>
+													Sizing Help
+												</SelectItem>
+												<SelectItem value='other' className='cursor-pointer'>
+													Other
+												</SelectItem>
 											</SelectContent>
 										</Select>
 									</div>
@@ -197,7 +203,7 @@ export default function ContactPage() {
 									<Button
 										type='submit'
 										disabled={isSubmitting}
-										className='w-full bg-foreground py-6 text-xs tracking-[0.15em] text-primary-foreground hover:bg-foreground/90'
+										className='w-full bg-foreground py-6 text-xs tracking-[0.15em] text-primary-foreground hover:bg-foreground/90 cursor-pointer'
 									>
 										{isSubmitting ? (
 											<>
